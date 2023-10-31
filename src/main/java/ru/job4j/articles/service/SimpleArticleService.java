@@ -23,8 +23,7 @@ public class SimpleArticleService implements ArticleService {
         var words = wordStore.findAll();
         for (int i = 0; i < count; i++) {
             LOGGER.info("Сгенерирована статья № {}", i);
-            Article article = articleGenerator.generate(words);
-            articleStore.save(article);
+            articleStore.save(articleGenerator.generate(words));
         }
     }
 }
